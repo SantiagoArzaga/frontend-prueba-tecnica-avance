@@ -13,12 +13,7 @@
     </p>
   </div>
 
-  <!-- Slider Section -->
-  <div class="section-box slider">
-    <button class="nav-btn left" (click)="prevSlide()">&#10094;</button>
-    <img [src]="sliderImages[currentSlide]" alt="Banner" />
-    <button class="nav-btn right" (click)="nextSlide()">&#10095;</button>
-  </div>
+
 
   <!-- Showcase Section
   <div class="section-box showcase" *ngIf="showcaseGifs.length > 0">
@@ -68,10 +63,17 @@
   </div>
 </div>
 
-<!-- 🔹 Nueva sección: Detalle del GIF seleccionado -->
-<div class="selected-gif" *ngIf="selectedGif">
-  <h2>GIF seleccionado</h2>
-  <img [src]="selectedGif.images.original.url" [alt]="selectedGif.title" />
-  <p>{{ selectedGif.title || 'Sin título' }}</p>
-</div>
+<section class="selected-gif-section" *ngIf="selectedGif">
+  <h2>GIF seleccionado desde Listado</h2>
+  <div class="selected-gif-card">
+    <img [src]="selectedGif.images.original.url" alt="GIF seleccionado" />
+    <p>{{ selectedGif.title }}</p>
+  </div>
+</section>
 
+  <!-- Slider Section -->
+  <section class="slider">
+    <button class="prev" (click)="prevSlide()">‹</button>
+    <img [src]="sliderImages[currentSlide]" alt="Banner" />
+    <button class="next" (click)="nextSlide()">›</button>
+  </section>

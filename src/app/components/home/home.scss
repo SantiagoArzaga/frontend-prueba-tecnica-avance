@@ -35,42 +35,49 @@ body {
 /* Slider */
 .slider {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 12px;
 
   img {
     width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
   }
 
-  .nav-btn {
+  button.prev,
+  button.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
     border: none;
-    color: #fff;
     font-size: 2rem;
-    cursor: pointer;
     padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
     border-radius: 50%;
-    transition: background 0.3s ease;
-
-    &:hover {
-      background: rgba(255, 0, 0, 0.9);
-    }
+    transition: background-color 0.3s ease;
   }
 
-  .left {
+  button.prev:hover,
+  button.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .prev {
     left: 10px;
   }
-  .right {
+
+  .next {
     right: 10px;
   }
 }
+
 
 /* Showcase */
 .showcase-scroll {
@@ -228,29 +235,32 @@ body {
     max-height: 150px;
   }
 }
-
-.selected-gif {
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #5a1a1a;
+.selected-gif-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #1a1a1a;
   border-radius: 12px;
   text-align: center;
-  max-width: 600px;
 
   h2 {
     color: #fff;
     margin-bottom: 1rem;
   }
 
-  img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 0.8rem;
-  }
+  .selected-gif-card {
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 0.5rem;
+    }
 
-  p {
-    color: #ddd;
-    font-size: 1.1rem;
+    p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
   }
 }
+
+
+
 

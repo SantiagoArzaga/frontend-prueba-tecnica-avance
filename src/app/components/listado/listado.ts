@@ -23,6 +23,9 @@ export class ListadoComponent implements OnInit {
   itemsPerPage = 12;
   total = 0;
 
+  // Búsqueda opcional
+  query = '';
+
   constructor(
     private dataService: DataService,
     private sharedData: SharedDataService
@@ -35,9 +38,15 @@ export class ListadoComponent implements OnInit {
   loadPage(): void {
     this.loading = true;
     this.error = '';
+
     const offset = (this.page - 1) * this.itemsPerPage;
 
-    this.dataService.getTrending(this.itemsPerPage, offset).subscribe({
+    const req$ =
+      this.query && this.query.trim().length > 0
+        ? this.dataService.searchGifs(this.query.trim(), this.itemsPerPage, offset)
+        : this.dataService.getTrending(this.itemsPerPage, offset);
+
+    req$.subscribe({
       next: (res) => {
         this.gifs = res?.data ?? [];
         this.total = res?.pagination?.total_count ?? 0;
@@ -55,6 +64,12 @@ export class ListadoComponent implements OnInit {
     this.loadPage();
   }
 
+  onSearch(): void {
+    this.page = 1;
+    this.loadPage();
+  }
+
+  // >>> Aquí publicamos la selección en SharedDataService
   selectGif(gif: any): void {
     this.selectedGifId = gif.id;
     this.sharedData.setSelectedGif(gif);
