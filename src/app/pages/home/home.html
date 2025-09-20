@@ -1,0 +1,5 @@
+<div class="selected-gif" *ngIf="selectedGif">
+  <h2>GIF seleccionado desde Listado</h2>
+  <img [src]="selectedGif.images.original.url" [alt]="selectedGif.title" />
+  <p>{{ selectedGif.title || 'Sin título' }}</p>
+</div>

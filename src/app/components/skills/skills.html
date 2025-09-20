@@ -1,0 +1,23 @@
+<div class="skills-container">
+  <h2>Mis Habilidades</h2>
+
+  <!-- 🔹 Barras de progreso -->
+  <div class="skills-progress">
+    <div class="progress" *ngFor="let skill of skills">
+      <span class="label">{{ skill.name }}</span>
+      <div class="bar">
+        <div class="fill" [style.width.%]="skill.level"></div>
+      </div>
+      <span class="percent">{{ skill.level }}%</span>
+    </div>
+  </div>
+
+  <!-- 🔹 Tarjetas con hover -->
+  <div class="skills-cards">
+    <div class="card" *ngFor="let card of cards">
+      <div class="icon">{{ card.icon }}</div>
+      <h3>{{ card.title }}</h3>
+      <p>{{ card.description }}</p>
+    </div>
+  </div>
+</div>

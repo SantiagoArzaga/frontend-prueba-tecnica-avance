@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1a1a1a;
+  padding: 1rem 2rem;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  .logo {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+
+      li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+
+        &:hover,
+        &.active {
+          background: #b71c1c;
+        }
+      }
+    }
+
+.auth-section {
+  margin-left: auto;
+  margin-right: 4rem; // 🔹 da espacio desde el borde derecho
+
+  a,
+  button {
+    text-decoration: none;
+    background: #b71c1c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #d32f2f;
+    }
+  }
+}
+
+  }
+}

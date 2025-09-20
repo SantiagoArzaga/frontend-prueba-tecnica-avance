@@ -1,0 +1,31 @@
+<div class="listado-container">
+  <h2>GIFs en Tendencia</h2>
+
+  <div *ngIf="loading" class="state">Cargando...</div>
+  <div *ngIf="error && !loading" class="state error">{{ error }}</div>
+
+  <div class="gif-list" *ngIf="!loading && !error">
+    <div
+      class="gif-card"
+      *ngFor="let gif of gifs"
+      (click)="selectGif(gif)"
+      [ngClass]="{ selected: isSelected(gif) }"
+    >
+      <div class="gif-image">
+        <img [src]="gif.images.fixed_height.url" [alt]="gif.title" />
+      </div>
+      <div class="gif-info">
+        <h3>{{ gif.title || 'Sin título' }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination" *ngIf="!loading && total > itemsPerPage">
+    <pagination-controls
+      [responsive]="true"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+      (pageChange)="onPageChange($event)">
+    </pagination-controls>
+  </div>
+</div>

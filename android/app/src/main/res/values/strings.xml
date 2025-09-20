@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">GifExplorer</string>
+    <string name="title_activity_main">GifExplorer</string>
+    <string name="package_name">com.taf.gifexplorer</string>
+    <string name="custom_url_scheme">com.taf.gifexplorer</string>
+</resources>

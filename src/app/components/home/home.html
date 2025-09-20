@@ -1,0 +1,77 @@
+<div class="home-container">
+  <!-- Greeting Section -->
+  <div *ngIf="user" class="section-box greeting">
+    <h1>Bienvenido, {{ user }}!</h1>
+  </div>
+
+  <!-- Introduction Section -->
+  <div class="section-box">
+    <h2>Explora el mundo de los GIFs</h2>
+    <p>
+      GIF Explorer es tu plataforma para descubrir, compartir y disfrutar de los mejores GIFs.
+      Encuentra contenido divertido, emocionante y único para alegrar tu día.
+    </p>
+  </div>
+
+  <!-- Slider Section -->
+  <div class="section-box slider">
+    <button class="nav-btn left" (click)="prevSlide()">&#10094;</button>
+    <img [src]="sliderImages[currentSlide]" alt="Banner" />
+    <button class="nav-btn right" (click)="nextSlide()">&#10095;</button>
+  </div>
+
+  <!-- Showcase Section
+  <div class="section-box showcase" *ngIf="showcaseGifs.length > 0">
+    <h2>GIFs Destacados</h2>
+    <div class="showcase-scroll">
+      <div class="showcase-item" *ngFor="let gif of showcaseGifs">
+        <img [src]="gif.images.fixed_height.url" [alt]="gif.title" />
+      </div>
+    </div>
+  </div> -->
+
+<!-- Cards Section -->
+<div class="section-box cards">
+  <div class="card" *ngFor="let card of cards" (click)="openModal(card.img)">
+    <img [src]="card.img" [alt]="card.title" />
+    <h3>{{ card.title }}</h3>
+  </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="showModal" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <img [src]="modalImage" alt="Imagen" />
+      <button (click)="closeModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="section-box about">
+    <h2>Acerca de Nosotros</h2>
+    <p>
+      En <strong>GIF Explorer</strong> creemos que una imagen puede alegrar tu día,
+      pero un GIF puede hacerlo inolvidable. Nuestra misión es ofrecerte un espacio
+      donde la creatividad y la diversión no tienen límites.
+    </p>
+    <p>
+      Ya sea que busques reír, sorprenderte o simplemente compartir un momento especial,
+      aquí encontrarás el GIF perfecto para cada ocasión.
+    </p>
+
+
+    <!-- Botón para ir al listado -->
+    <div class="navigation">
+    <button class="btn-listado" (click)="navigateToListado()">Ir al Listado</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- 🔹 Nueva sección: Detalle del GIF seleccionado -->
+<div class="selected-gif" *ngIf="selectedGif">
+  <h2>GIF seleccionado</h2>
+  <img [src]="selectedGif.images.original.url" [alt]="selectedGif.title" />
+  <p>{{ selectedGif.title || 'Sin título' }}</p>
+</div>
+

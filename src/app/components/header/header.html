@@ -1,0 +1,17 @@
+<header class="header">
+  <h1 class="logo">GIF Explorer</h1>
+
+  <nav class="nav">
+    <ul class="nav-links">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/listado" routerLinkActive="active">Listado</a></li>
+      <li><a routerLink="/skills" routerLinkActive="active">Skills</a></li>
+    </ul>
+
+    <!-- 🔹 Sección separada para login/logout -->
+    <div class="auth-section ">
+      <a *ngIf="!isLoggedIn" routerLink="/login" routerLinkActive="active">Login</a>
+      <button *ngIf="isLoggedIn" (click)="logout()">Cerrar sesión</button>
+    </div>
+  </nav>
+</header>
