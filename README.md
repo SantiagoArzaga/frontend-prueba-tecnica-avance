@@ -1,5 +1,28 @@
 # FrontendPruebaTecnica
 
+# GIF Explorer — Frontend Técnico Angular
+
+Este proyecto fue desarrollado como solución a una **prueba técnica Frontend** usando **Angular 17**. Se trata de una aplicación SPA que permite explorar y seleccionar GIFs desde la API pública de Giphy. El proyecto incluye login, navegación entre componentes, uso de servicios, almacenamiento local, estilos personalizados con SCSS, y está listo para ser compilado como app híbrida con Capacitor (Android/iOS).
+
+---
+
+##  Tecnologías utilizadas
+
+- **Angular 17**
+- **SCSS (sin Tailwind ni Bootstrap)**
+- **Angular Material (opcional)**
+- **ngx-pagination** (librería externa por `npm`)
+- **localStorage**
+- **Reactive Forms**
+- **Giphy API**
+- **CapacitorJS** (preparado como app híbrida)
+- **Animaciones y transiciones** CSS
+- **Renderer2** (opcional, si se desea manipulación del DOM)
+
+---
+
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
 
 ## Development server
@@ -57,3 +80,5 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
